@@ -10,8 +10,8 @@ def she_says_he_says(she_says):
     'umiram'
     """
 
-    phonetic_she_says = she_says.replace("y","i")                             # vase reseni
-    compact = phonetic_she_says.replace(" ","")                              # vase reseni
+    phonetic_she_says = she_says.replace("y", "i")                 # vase reseni
+    compact = phonetic_she_says.replace(" ", "")                   # vase reseni
     he_says = compact[::-1]                                        # vase reseni
     return he_says
 

@@ -30,7 +30,7 @@ def match_permutations_substrings(string, words):
     # permutations as a set
     perms = all_permutations_substrings(string)
 
-    return  {x for x in perms if x in words}                             # your solution
+    return {x for x in perms if x in words}                                      # your solution
 
 
 # max 1 point
@@ -47,6 +47,7 @@ def uniq_srt(it):
     ['a', 'b', 'd', 'k', 'r']
 
     """
+
     return sorted(list(dict.fromkeys(it)))                                        # your solution
 
 
@@ -57,23 +58,17 @@ def uniq_srt(it):
 def uniq_orig_order(it):
     """Returns the input sequence, items ordered by the order of their
        first appearance
-       vrati vstupnu postupnost polozky zoradene podla ich poradia prvy vzhlad
 
     >>> uniq_orig_order([3, 3, 5, 3, 4, 2, 4])
     [3, 5, 4, 2]
 
     >>> uniq_orig_order('abrakadabra')
     ['a', 'b', 'r', 'k', 'd']
-    """
-    """
-    result_list = []
-    for x in it:
-        if x not in result_list:
-            result_list.append(x)
 
-    return result_list
     """
-    return list(dict.fromkeys(it))   # your solution
+
+    return list(dict.fromkeys(it))                                        # your solution
+
 
 if __name__ == "__main__":
     import doctest
