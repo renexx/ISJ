@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-class Polynomial(object):
+class Polynomial():
     """ Class for basic mathematical operations with polynomials
     Operations : Add, Pow, derivative, at_value """
 
-    def __init__(self, *args , **kwargs):
+    def __init__(self, *args, **kwargs):
         """ There are several ways to create class instances
         pol1 = Polynomial([1,-3,0,2])
         pol2 = Polynomial(1,-3,0,2)
@@ -48,19 +48,19 @@ class Polynomial(object):
                         temp_string += " + "
                     else:
                         temp_string += " - "
-                if i == 0: #if x^0
-                    temp_string += "{0}".format(str(abs(self.polynom[0]))) # if 2x^0 -> 2
-                    return temp_string
-                if i == 1: # if x^1
+                if i == 1: #if x^1
                     if abs(self.polynom[1]) != 1: #if koeficinet is not 1 -> 2x
                         temp_string += "{0}x".format(str(abs(self.polynom[1]))) # 2x^1 -> 2x
                     else:
                         temp_string += "x" # if koeficient is 1 -  1x^1 -> x
-                else: # if x^2 nad more
+                elif i > 1: # if x^2 or more
                     if abs(self.polynom[i]) != 1: #if koeficinet is not 1
                         temp_string += "{0}x^{1}".format(str(abs(self.polynom[i])), i) # 2x^2
                     else: # if koeficinet is 1
                         temp_string += "x^{0}".format(i) # 1x^2 => x^2
+                else: # if x^0
+                    temp_string += "{0}".format(str(abs(self.polynom[0]))) # if 2x^0 -> 2
+                    return temp_string
         else:# if len of polynom is 1, this is not polynom just number
             temp_string += str(self.polynom[0]) # set this number
             return temp_string # example: Polynomial(2) return 2
@@ -73,7 +73,7 @@ class Polynomial(object):
         Input: pol1 == pol2
         Output: True
         """
-        if isinstance(self,other.__class__):
+        if isinstance(self, other.__class__):
             return self.polynom == other.polynom
         return False
 
